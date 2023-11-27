@@ -1,0 +1,52 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Bienvenido alumno</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="login-page">
+  <div class="login-container">
+    
+    <ion-card class="login-card">
+      
+      <ion-card-header class="login-header" style="text-align: center;">
+        <ion-card-title class="login-title"><h1>Iniciar Sesión</h1></ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <div class="ion-text-center">
+          <div class="ion-align-items-center ion-justify-content-center">
+            <img style="width: 100px;" src="assets/icon/logo.png" alt="Logo">
+          </div>
+        </div>
+        <form action="" [formGroup]="formularioLogin" class="login-form">
+          
+          <ion-item class="login-input">
+            <ion-label position="floating" class="input-label">Nombre de Usuario</ion-label>
+            <ion-input formControlName="nombreLogin" class="input-field" maxlength="8" minlength="3"></ion-input>
+          </ion-item>
+
+          <ion-item class="login-input">
+            <ion-label position="floating" class="input-label">Contraseña</ion-label>
+            <ion-input formControlName="password" type="password" class="input-field" pattern="^\d{4}$" minlength="4" maxlength="4"></ion-input>
+          </ion-item>
+
+        </form>
+        
+        <ion-button (click)="ingresar()" class="btn" expand="full">
+          Ingresar
+        </ion-button>
+        <br> 
+      </ion-card-content>
+      <p style="text-align: right;" [routerLink]="['/recuperar-password']" class="forgot-password-link">¿Olvidaste tu contraseña?</p>
+    </ion-card>
+  </div>
+</ion-content>
+<ion-footer>
+  <ion-card>
+    <ion-card-content>
+      <ion-toolbar>
+        <a [routerLink]="['/registro']" slot="end" class="btn animated-btn">Registrarse</a>
+      </ion-toolbar>
+    </ion-card-content>
+  </ion-card>
+</ion-footer>

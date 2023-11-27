@@ -1,0 +1,33 @@
+.animated-btn {
+    padding: 12px 24px;
+    font-size: 16px;
+    border: none;
+    border-radius: 30px;
+    color: #000000;
+    background-color: #ffffff;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    transition: background-color 0.3s ease;
+  }
+  
+  .animated-btn:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: #3362fd;
+    z-index: -1;
+    transition: left 0.3s ease;
+  }
+  
+  .animated-btn:hover {
+    background-color: #3363ff;
+  }
+  
+  .animated-btn:hover:before {
+    left: 0;
+  }
